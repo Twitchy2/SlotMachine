@@ -44,6 +44,8 @@
             this.LeftWinPictureBox = new System.Windows.Forms.PictureBox();
             this.MiddleWinPictureBox = new System.Windows.Forms.PictureBox();
             this.RightWinPictureBox = new System.Windows.Forms.PictureBox();
+            this.ResetPictureBox = new System.Windows.Forms.PictureBox();
+            this.QuitPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.SpinPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bet1picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bet10Picture)).BeginInit();
@@ -56,6 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.LeftWinPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MiddleWinPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightWinPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResetPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuitPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // SpinPictureBox
@@ -108,6 +112,7 @@
             this.BetTextBox.Size = new System.Drawing.Size(61, 21);
             this.BetTextBox.TabIndex = 9;
             this.BetTextBox.Text = "Bet";
+            this.BetTextBox.TextChanged += new System.EventHandler(this.BetTextBox_TextChanged);
             // 
             // WinnerTextBox
             // 
@@ -131,6 +136,7 @@
             this.Bet1picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Bet1picture.TabIndex = 11;
             this.Bet1picture.TabStop = false;
+            this.Bet1picture.Click += new System.EventHandler(this.Bet1picture_Click);
             // 
             // Bet10Picture
             // 
@@ -141,6 +147,7 @@
             this.Bet10Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Bet10Picture.TabIndex = 12;
             this.Bet10Picture.TabStop = false;
+            this.Bet10Picture.Click += new System.EventHandler(this.Bet10Picture_Click);
             // 
             // Bet100Picture
             // 
@@ -151,6 +158,7 @@
             this.Bet100Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Bet100Picture.TabIndex = 13;
             this.Bet100Picture.TabStop = false;
+            this.Bet100Picture.Click += new System.EventHandler(this.Bet100Picture_Click);
             // 
             // pictureBox1
             // 
@@ -161,6 +169,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -171,6 +180,7 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // Bet50PictureBox
             // 
@@ -181,6 +191,7 @@
             this.Bet50PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Bet50PictureBox.TabIndex = 16;
             this.Bet50PictureBox.TabStop = false;
+            this.Bet50PictureBox.Click += new System.EventHandler(this.Bet50PictureBox_Click);
             // 
             // Bet500PictureBox
             // 
@@ -191,6 +202,7 @@
             this.Bet500PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Bet500PictureBox.TabIndex = 17;
             this.Bet500PictureBox.TabStop = false;
+            this.Bet500PictureBox.Click += new System.EventHandler(this.Bet500PictureBox_Click);
             // 
             // Bet5PictureBox
             // 
@@ -201,6 +213,7 @@
             this.Bet5PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Bet5PictureBox.TabIndex = 18;
             this.Bet5PictureBox.TabStop = false;
+            this.Bet5PictureBox.Click += new System.EventHandler(this.Bet5PictureBox_Click);
             // 
             // LeftWinPictureBox
             // 
@@ -210,6 +223,7 @@
             this.LeftWinPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LeftWinPictureBox.TabIndex = 19;
             this.LeftWinPictureBox.TabStop = false;
+            this.LeftWinPictureBox.Click += new System.EventHandler(this.LeftWinPictureBox_Click);
             // 
             // MiddleWinPictureBox
             // 
@@ -229,6 +243,26 @@
             this.RightWinPictureBox.TabIndex = 21;
             this.RightWinPictureBox.TabStop = false;
             // 
+            // ResetPictureBox
+            // 
+            this.ResetPictureBox.Image = global::SlotMachine.Properties.Resources.reset;
+            this.ResetPictureBox.Location = new System.Drawing.Point(249, 436);
+            this.ResetPictureBox.Name = "ResetPictureBox";
+            this.ResetPictureBox.Size = new System.Drawing.Size(34, 30);
+            this.ResetPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ResetPictureBox.TabIndex = 22;
+            this.ResetPictureBox.TabStop = false;
+            // 
+            // QuitPictureBox
+            // 
+            this.QuitPictureBox.Image = global::SlotMachine.Properties.Resources.powerbutton;
+            this.QuitPictureBox.Location = new System.Drawing.Point(249, 472);
+            this.QuitPictureBox.Name = "QuitPictureBox";
+            this.QuitPictureBox.Size = new System.Drawing.Size(34, 30);
+            this.QuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.QuitPictureBox.TabIndex = 23;
+            this.QuitPictureBox.TabStop = false;
+            // 
             // SlotMachineForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -236,6 +270,8 @@
             this.BackgroundImage = global::SlotMachine.Properties.Resources.slotmachine;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(462, 533);
+            this.Controls.Add(this.QuitPictureBox);
+            this.Controls.Add(this.ResetPictureBox);
             this.Controls.Add(this.RightWinPictureBox);
             this.Controls.Add(this.MiddleWinPictureBox);
             this.Controls.Add(this.LeftWinPictureBox);
@@ -270,6 +306,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.LeftWinPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MiddleWinPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RightWinPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ResetPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuitPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,5 +330,7 @@
         private System.Windows.Forms.PictureBox LeftWinPictureBox;
         private System.Windows.Forms.PictureBox MiddleWinPictureBox;
         private System.Windows.Forms.PictureBox RightWinPictureBox;
+        private System.Windows.Forms.PictureBox ResetPictureBox;
+        private System.Windows.Forms.PictureBox QuitPictureBox;
     }
 }

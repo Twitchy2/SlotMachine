@@ -282,6 +282,131 @@ namespace SlotMachine
                 MessageBox.Show("Please enter a valid bet amount");
             }
         }
+
+        private void LeftWinPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Below this is where most of the programming for the bet buttons will go
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Bet1picture_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 1)
+            {
+                playerBet = 1;
+                BetTextBox.Text = playerBet.ToString();
+            } else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 2)
+            {
+                playerBet = 2;
+                BetTextBox.Text = playerBet.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void Bet5PictureBox_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 5)
+            {
+                playerBet = 5;
+                BetTextBox.Text = playerBet.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void Bet10Picture_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 10)
+            {
+                playerBet = 10;
+                BetTextBox.Text = playerBet.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 25)
+            {
+                playerBet = 25;
+                BetTextBox.Text = playerBet.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void Bet50PictureBox_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 50)
+            {
+                playerBet = 50;
+                BetTextBox.Text = playerBet.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void Bet100Picture_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 100)
+            {
+                playerBet = 100;
+                BetTextBox.Text = playerBet.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void Bet500PictureBox_Click(object sender, EventArgs e)
+        {
+            //Put the money here juuust in case
+            if (playerMoney < 500)
+            {
+                playerBet = 500;
+                BetTextBox.Text = playerBet.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
+            }
+        }
+
+        private void BetTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
