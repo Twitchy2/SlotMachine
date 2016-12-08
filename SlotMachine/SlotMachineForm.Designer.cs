@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.SpinPictureBox = new System.Windows.Forms.PictureBox();
-            this.UnknownTextBox = new System.Windows.Forms.TextBox();
+            this.JackPotTextBox = new System.Windows.Forms.TextBox();
             this.CreditsTextBox = new System.Windows.Forms.TextBox();
             this.BetTextBox = new System.Windows.Forms.TextBox();
             this.WinnerTextBox = new System.Windows.Forms.TextBox();
@@ -73,19 +73,20 @@
             this.SpinPictureBox.TabIndex = 6;
             this.SpinPictureBox.TabStop = false;
             this.SpinPictureBox.Click += new System.EventHandler(this.SpinPictureBox_Click);
+            this.SpinPictureBox.MouseHover += new System.EventHandler(this.SpinPictureBox_MouseHover);
             // 
-            // UnknownTextBox
+            // JackPotTextBox
             // 
-            this.UnknownTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.UnknownTextBox.Enabled = false;
-            this.UnknownTextBox.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnknownTextBox.ForeColor = System.Drawing.SystemColors.Window;
-            this.UnknownTextBox.Location = new System.Drawing.Point(183, 165);
-            this.UnknownTextBox.Name = "UnknownTextBox";
-            this.UnknownTextBox.ReadOnly = true;
-            this.UnknownTextBox.Size = new System.Drawing.Size(100, 21);
-            this.UnknownTextBox.TabIndex = 7;
-            this.UnknownTextBox.Text = "Twitchy Slots!";
+            this.JackPotTextBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.JackPotTextBox.Enabled = false;
+            this.JackPotTextBox.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JackPotTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.JackPotTextBox.Location = new System.Drawing.Point(183, 165);
+            this.JackPotTextBox.Name = "JackPotTextBox";
+            this.JackPotTextBox.ReadOnly = true;
+            this.JackPotTextBox.Size = new System.Drawing.Size(100, 21);
+            this.JackPotTextBox.TabIndex = 7;
+            this.JackPotTextBox.Text = "Twitchy Slots!";
             // 
             // CreditsTextBox
             // 
@@ -137,6 +138,7 @@
             this.Bet1picture.TabIndex = 11;
             this.Bet1picture.TabStop = false;
             this.Bet1picture.Click += new System.EventHandler(this.Bet1picture_Click);
+            this.Bet1picture.MouseHover += new System.EventHandler(this.Bet1picture_MouseHover);
             // 
             // Bet10Picture
             // 
@@ -148,6 +150,7 @@
             this.Bet10Picture.TabIndex = 12;
             this.Bet10Picture.TabStop = false;
             this.Bet10Picture.Click += new System.EventHandler(this.Bet10Picture_Click);
+            this.Bet10Picture.MouseHover += new System.EventHandler(this.Bet10Picture_MouseHover);
             // 
             // Bet100Picture
             // 
@@ -159,6 +162,7 @@
             this.Bet100Picture.TabIndex = 13;
             this.Bet100Picture.TabStop = false;
             this.Bet100Picture.Click += new System.EventHandler(this.Bet100Picture_Click);
+            this.Bet100Picture.MouseHover += new System.EventHandler(this.Bet100Picture_MouseHover);
             // 
             // pictureBox1
             // 
@@ -169,7 +173,8 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.Bet2Picture_Click);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.Bet2Picture_MouseHover);
             // 
             // pictureBox2
             // 
@@ -180,7 +185,8 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.pictureBox2.Click += new System.EventHandler(this.Bet25Picture_Click);
+            this.pictureBox2.MouseHover += new System.EventHandler(this.Bet25Picture_MouseHover);
             // 
             // Bet50PictureBox
             // 
@@ -192,6 +198,7 @@
             this.Bet50PictureBox.TabIndex = 16;
             this.Bet50PictureBox.TabStop = false;
             this.Bet50PictureBox.Click += new System.EventHandler(this.Bet50PictureBox_Click);
+            this.Bet50PictureBox.MouseHover += new System.EventHandler(this.Bet50PictureBox_MouseHover);
             // 
             // Bet500PictureBox
             // 
@@ -203,6 +210,7 @@
             this.Bet500PictureBox.TabIndex = 17;
             this.Bet500PictureBox.TabStop = false;
             this.Bet500PictureBox.Click += new System.EventHandler(this.Bet500PictureBox_Click);
+            this.Bet500PictureBox.MouseHover += new System.EventHandler(this.Bet500PictureBox_MouseHover);
             // 
             // Bet5PictureBox
             // 
@@ -214,6 +222,7 @@
             this.Bet5PictureBox.TabIndex = 18;
             this.Bet5PictureBox.TabStop = false;
             this.Bet5PictureBox.Click += new System.EventHandler(this.Bet5PictureBox_Click);
+            this.Bet5PictureBox.MouseHover += new System.EventHandler(this.Bet5PictureBox_MouseHover);
             // 
             // LeftWinPictureBox
             // 
@@ -252,6 +261,8 @@
             this.ResetPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ResetPictureBox.TabIndex = 22;
             this.ResetPictureBox.TabStop = false;
+            this.ResetPictureBox.Click += new System.EventHandler(this.ResetPictureBox_Click);
+            this.ResetPictureBox.MouseHover += new System.EventHandler(this.ResetPictureBox_MouseHover);
             // 
             // QuitPictureBox
             // 
@@ -262,6 +273,8 @@
             this.QuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.QuitPictureBox.TabIndex = 23;
             this.QuitPictureBox.TabStop = false;
+            this.QuitPictureBox.Click += new System.EventHandler(this.QuitPictureBox_Click);
+            this.QuitPictureBox.MouseHover += new System.EventHandler(this.QuitPictureBox_MouseHover);
             // 
             // SlotMachineForm
             // 
@@ -286,7 +299,7 @@
             this.Controls.Add(this.WinnerTextBox);
             this.Controls.Add(this.BetTextBox);
             this.Controls.Add(this.CreditsTextBox);
-            this.Controls.Add(this.UnknownTextBox);
+            this.Controls.Add(this.JackPotTextBox);
             this.Controls.Add(this.SpinPictureBox);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -294,6 +307,7 @@
             this.Name = "SlotMachineForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Slot Machine";
+            this.Load += new System.EventHandler(this.SlotMachineForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SpinPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bet1picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bet10Picture)).EndInit();
@@ -315,7 +329,7 @@
 
         #endregion
         private System.Windows.Forms.PictureBox SpinPictureBox;
-        private System.Windows.Forms.TextBox UnknownTextBox;
+        private System.Windows.Forms.TextBox JackPotTextBox;
         private System.Windows.Forms.TextBox CreditsTextBox;
         private System.Windows.Forms.TextBox BetTextBox;
         private System.Windows.Forms.TextBox WinnerTextBox;
