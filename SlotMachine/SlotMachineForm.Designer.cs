@@ -66,13 +66,14 @@
             // 
             this.SpinPictureBox.BackColor = System.Drawing.Color.Transparent;
             this.SpinPictureBox.Image = global::SlotMachine.Properties.Resources.spin;
-            this.SpinPictureBox.Location = new System.Drawing.Point(336, 436);
+            this.SpinPictureBox.Location = new System.Drawing.Point(338, 436);
             this.SpinPictureBox.Name = "SpinPictureBox";
             this.SpinPictureBox.Size = new System.Drawing.Size(60, 50);
             this.SpinPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SpinPictureBox.TabIndex = 6;
             this.SpinPictureBox.TabStop = false;
             this.SpinPictureBox.Click += new System.EventHandler(this.SpinPictureBox_Click);
+            this.SpinPictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.SpinPictureBox_MouseDown);
             this.SpinPictureBox.MouseHover += new System.EventHandler(this.SpinPictureBox_MouseHover);
             // 
             // JackPotTextBox
@@ -131,7 +132,7 @@
             // Bet1picture
             // 
             this.Bet1picture.Image = global::SlotMachine.Properties.Resources.bet1;
-            this.Bet1picture.Location = new System.Drawing.Point(73, 436);
+            this.Bet1picture.Location = new System.Drawing.Point(97, 436);
             this.Bet1picture.Name = "Bet1picture";
             this.Bet1picture.Size = new System.Drawing.Size(35, 30);
             this.Bet1picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -143,7 +144,7 @@
             // Bet10Picture
             // 
             this.Bet10Picture.Image = global::SlotMachine.Properties.Resources.bet10;
-            this.Bet10Picture.Location = new System.Drawing.Point(199, 436);
+            this.Bet10Picture.Location = new System.Drawing.Point(223, 436);
             this.Bet10Picture.Name = "Bet10Picture";
             this.Bet10Picture.Size = new System.Drawing.Size(35, 30);
             this.Bet10Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -155,7 +156,7 @@
             // Bet100Picture
             // 
             this.Bet100Picture.Image = global::SlotMachine.Properties.Resources.bet100;
-            this.Bet100Picture.Location = new System.Drawing.Point(158, 472);
+            this.Bet100Picture.Location = new System.Drawing.Point(182, 472);
             this.Bet100Picture.Name = "Bet100Picture";
             this.Bet100Picture.Size = new System.Drawing.Size(35, 30);
             this.Bet100Picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -167,7 +168,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SlotMachine.Properties.Resources.bet2;
-            this.pictureBox1.Location = new System.Drawing.Point(114, 436);
+            this.pictureBox1.Location = new System.Drawing.Point(138, 436);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(35, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -179,7 +180,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SlotMachine.Properties.Resources.bet25;
-            this.pictureBox2.Location = new System.Drawing.Point(73, 472);
+            this.pictureBox2.Location = new System.Drawing.Point(97, 472);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(35, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,7 +192,7 @@
             // Bet50PictureBox
             // 
             this.Bet50PictureBox.Image = global::SlotMachine.Properties.Resources.bet50;
-            this.Bet50PictureBox.Location = new System.Drawing.Point(114, 472);
+            this.Bet50PictureBox.Location = new System.Drawing.Point(138, 472);
             this.Bet50PictureBox.Name = "Bet50PictureBox";
             this.Bet50PictureBox.Size = new System.Drawing.Size(35, 30);
             this.Bet50PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -203,7 +204,7 @@
             // Bet500PictureBox
             // 
             this.Bet500PictureBox.Image = global::SlotMachine.Properties.Resources.bet500;
-            this.Bet500PictureBox.Location = new System.Drawing.Point(199, 472);
+            this.Bet500PictureBox.Location = new System.Drawing.Point(223, 472);
             this.Bet500PictureBox.Name = "Bet500PictureBox";
             this.Bet500PictureBox.Size = new System.Drawing.Size(35, 30);
             this.Bet500PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -215,7 +216,7 @@
             // Bet5PictureBox
             // 
             this.Bet5PictureBox.Image = global::SlotMachine.Properties.Resources.bet5;
-            this.Bet5PictureBox.Location = new System.Drawing.Point(158, 436);
+            this.Bet5PictureBox.Location = new System.Drawing.Point(182, 436);
             this.Bet5PictureBox.Name = "Bet5PictureBox";
             this.Bet5PictureBox.Size = new System.Drawing.Size(35, 30);
             this.Bet5PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -226,6 +227,7 @@
             // 
             // LeftWinPictureBox
             // 
+            this.LeftWinPictureBox.Image = global::SlotMachine.Properties.Resources.bar;
             this.LeftWinPictureBox.Location = new System.Drawing.Point(73, 224);
             this.LeftWinPictureBox.Name = "LeftWinPictureBox";
             this.LeftWinPictureBox.Size = new System.Drawing.Size(88, 130);
@@ -236,6 +238,7 @@
             // 
             // MiddleWinPictureBox
             // 
+            this.MiddleWinPictureBox.Image = global::SlotMachine.Properties.Resources.bell;
             this.MiddleWinPictureBox.Location = new System.Drawing.Point(183, 224);
             this.MiddleWinPictureBox.Name = "MiddleWinPictureBox";
             this.MiddleWinPictureBox.Size = new System.Drawing.Size(89, 130);
@@ -245,6 +248,7 @@
             // 
             // RightWinPictureBox
             // 
+            this.RightWinPictureBox.Image = global::SlotMachine.Properties.Resources.seven;
             this.RightWinPictureBox.Location = new System.Drawing.Point(298, 224);
             this.RightWinPictureBox.Name = "RightWinPictureBox";
             this.RightWinPictureBox.Size = new System.Drawing.Size(89, 130);
@@ -255,7 +259,7 @@
             // ResetPictureBox
             // 
             this.ResetPictureBox.Image = global::SlotMachine.Properties.Resources.reset;
-            this.ResetPictureBox.Location = new System.Drawing.Point(249, 436);
+            this.ResetPictureBox.Location = new System.Drawing.Point(298, 436);
             this.ResetPictureBox.Name = "ResetPictureBox";
             this.ResetPictureBox.Size = new System.Drawing.Size(34, 30);
             this.ResetPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -267,7 +271,7 @@
             // QuitPictureBox
             // 
             this.QuitPictureBox.Image = global::SlotMachine.Properties.Resources.powerbutton;
-            this.QuitPictureBox.Location = new System.Drawing.Point(249, 472);
+            this.QuitPictureBox.Location = new System.Drawing.Point(298, 472);
             this.QuitPictureBox.Name = "QuitPictureBox";
             this.QuitPictureBox.Size = new System.Drawing.Size(34, 30);
             this.QuitPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -15,6 +16,14 @@ namespace SlotMachine
 {
     public partial class SlotMachineForm : Form
     {
+        /// <summary>
+        /// Logan SikoraBeder
+        /// Assignment 5
+        /// December 8th, 2016
+        /// Comp whatever the number is
+        /// Game is hard
+        /// </summary>
+
         private int playerMoney = 1000;
         private int winnings = 0;
         private int jackpot = 5000;
@@ -109,7 +118,7 @@ namespace SlotMachine
             playerMoney += winnings;
             //possibly remove this part later
             WinnerTextBox.Text = winnings.ToString("C");
-            MessageBox.Show("You Won: $" + winnings, "Winner!");
+            //MessageBox.Show("You Won: $" + winnings, "Winner!");
             CreditsTextBox.Text = playerMoney.ToString("C");
             resetFruitTally();
             checkJackPot();
@@ -120,7 +129,7 @@ namespace SlotMachine
         {
             playerMoney -= playerBet;
             WinnerTextBox.Text = "-" + playerBet.ToString("C");
-            MessageBox.Show("You Lost!", "Loss!");
+            // MessageBox.Show("You Lost!", "Loss!");
             CreditsTextBox.Text = playerMoney.ToString("C");
             resetFruitTally();
         }
@@ -143,44 +152,38 @@ namespace SlotMachine
             {
                 outCome[spin] = this.random.Next(65) + 1;
 
-                //I think this is where I will make things look all fruity
-                String imageString = Regex.Replace(//where the hell the fruit variable is, @"\+", "");
 
-                LeftWinPictureBox.Image = (Image)Resources.ResourceManager.GetObject(imageString);
-                MiddleWinPictureBox.Image = (Image)Resources.ResourceManager.GetObject(imageString);
-                RightWinPictureBox.Image = (Image)Resources.ResourceManager.GetObject(imageString);
-                // end fruity pictures
 
                 if (checkRange(outCome[spin], 1, 27)) {  // 41.5% probability
                     betLine[spin] = "blank";
                     blanks++;
                     }
                 else if (checkRange(outCome[spin], 28, 37)){ // 15.4% probability
-                    betLine[spin] = "Grapes";
+                    betLine[spin] = "grapes";
                     grapes++;
                 }
                 else if (checkRange(outCome[spin], 38, 46)){ // 13.8% probability
-                    betLine[spin] = "Banana";
+                    betLine[spin] = "banana";
                     bananas++;
                 }
                 else if (checkRange(outCome[spin], 47, 54)){ // 12.3% probability
-                    betLine[spin] = "Orange";
+                    betLine[spin] = "orange";
                     oranges++;
                 }
                 else if (checkRange(outCome[spin], 55, 59)){ //  7.7% probability
-                    betLine[spin] = "Cherry";
+                    betLine[spin] = "cherry";
                     cherries++;
                 }
                 else if (checkRange(outCome[spin], 60, 62)){ //  4.6% probability
-                    betLine[spin] = "Bar";
+                    betLine[spin] = "bar";
                     bars++;
                 }
                 else if (checkRange(outCome[spin], 63, 64)){ //  3.1% probability
-                    betLine[spin] = "Bell";
+                    betLine[spin] = "bell";
                     bells++;
                 }
                 else if (checkRange(outCome[spin], 65, 65)){ //  1.5% probability
-                    betLine[spin] = "Seven";
+                    betLine[spin] = "seven";
                     sevens++;
                 }
 
@@ -283,6 +286,7 @@ namespace SlotMachine
             else if (playerBet > playerMoney)
             {
                 MessageBox.Show("You don't have enough Money to place that bet.", "Insufficient Funds");
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
             else if (playerBet <= 0)
             {
@@ -290,12 +294,128 @@ namespace SlotMachine
             }
             else if (playerBet <= playerMoney)
             {
+  
                 spinResult = Reels();
+                //i spent 3 hours on this
+                //kill me
+                ResourceManager RM = Resources.ResourceManager;
+                LeftWinPictureBox.Image = (Bitmap)RM.GetObject(spinResult[0]);
+                MiddleWinPictureBox.Image = (Bitmap)RM.GetObject(spinResult[1]);
+                RightWinPictureBox.Image = (Bitmap)RM.GetObject(spinResult[2]);
+
+
+                //I think this is where I will make things look all fruity
+                //this is what i did in the past
+                //left
+                /*
+                if (spinResult[0] == "Banana")
+                {
+                    LeftWinPictureBox.Image = Resources.banana;
+                }
+                else if(spinResult[0] == "Bar")
+                {
+                    LeftWinPictureBox.Image = Resources.bar;
+                }
+                else if (spinResult[0] == "Seven")
+                {
+                    LeftWinPictureBox.Image = Resources.seven;
+                }
+                else if (spinResult[0] == "Bell")
+                {
+                    LeftWinPictureBox.Image = Resources.bell;
+                }
+                else if (spinResult[0] == "Cherry")
+                {
+                    LeftWinPictureBox.Image = Resources.cherry;
+                }
+                else if (spinResult[0] == "Grapes")
+                {
+                    LeftWinPictureBox.Image = Resources.grapes;
+                }
+                else if (spinResult[0] == "Orange")
+                {
+                    LeftWinPictureBox.Image = Resources.orange;
+                }
+                else if (spinResult[0] == "blank")
+                {
+                    LeftWinPictureBox.Image = Resources.blank;
+                }
+                //middle
+                if (spinResult[1] == "banana")
+                {
+                    LeftWinPictureBox.Image = Resources.banana;
+                }
+                else if (spinResult[1] == "bar")
+                {
+                    LeftWinPictureBox.Image = Resources.bar;
+                }
+                else if (spinResult[1] == "seven")
+                {
+                    LeftWinPictureBox.Image = Resources.seven;
+                }
+                else if (spinResult[1] == "bell")
+                {
+                    LeftWinPictureBox.Image = Resources.bell;
+                }
+                else if (spinResult[1] == "cherry")
+                {
+                    LeftWinPictureBox.Image = Resources.cherry;
+                }
+                else if (spinResult[1] == "grapes")
+                {
+                    LeftWinPictureBox.Image = Resources.grapes;
+                }
+                else if (spinResult[1] == "orange")
+                {
+                    LeftWinPictureBox.Image = Resources.orange;
+                }
+                else if (spinResult[1] == "blank")
+                {
+                    LeftWinPictureBox.Image = Resources.blank;
+                }
+                //right
+                if (spinResult[2] == "banana")
+                {
+                    LeftWinPictureBox.Image = Resources.banana;
+                }
+                else if (spinResult[2] == "bar")
+                {
+                    LeftWinPictureBox.Image = Resources.bar;
+                }
+                else if (spinResult[2] == "seven")
+                {
+                    LeftWinPictureBox.Image = Resources.seven;
+                }
+                else if (spinResult[2] == "bell")
+                {
+                    LeftWinPictureBox.Image = Resources.bell;
+                }
+                else if (spinResult[2] == "cherry")
+                {
+                    LeftWinPictureBox.Image = Resources.cherry;
+                }
+                else if (spinResult[2] == "grapes")
+                {
+                    LeftWinPictureBox.Image = Resources.grapes;
+                }
+                else if (spinResult[2] == "orange")
+                {
+                    LeftWinPictureBox.Image = Resources.orange;
+                }
+                else if (spinResult[2] == "blank")
+                {
+                    LeftWinPictureBox.Image = Resources.blank;
+                }
+                */
+
+                // end fruity pictures
                 fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
 
-                MessageBox.Show(fruits);
+
+               // MessageBox.Show(fruits);
                 determineWinnings();
                 turn++;
+                SpinPictureBox.Image = Resources.spin;
                 // not needed anymore showPlayerStats();
             }
             else
@@ -321,10 +441,12 @@ namespace SlotMachine
                 playerBet = 1;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             } else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -336,11 +458,13 @@ namespace SlotMachine
                 playerBet = 2;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             }
             else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -352,11 +476,13 @@ namespace SlotMachine
                 playerBet = 5;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             }
             else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -368,11 +494,13 @@ namespace SlotMachine
                 playerBet = 10;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             }
             else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -384,11 +512,13 @@ namespace SlotMachine
                 playerBet = 25;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             }
             else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -400,11 +530,13 @@ namespace SlotMachine
                 playerBet = 50;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             }
             else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -416,11 +548,13 @@ namespace SlotMachine
                 playerBet = 100;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             }
             else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -432,11 +566,13 @@ namespace SlotMachine
                 playerBet = 500;
                 BetTextBox.Text = playerBet.ToString();
                 SpinPictureBox.Enabled = true;
+                SpinPictureBox.Image = Resources.spin;
             }
             else
             {
                 MessageBox.Show("Sorry, but you don't have enough money for this bet!", "You're Broke!");
                 SpinPictureBox.Enabled = false;
+                SpinPictureBox.Image = Resources.spin_disabled;
             }
         }
 
@@ -534,6 +670,11 @@ namespace SlotMachine
         {
             CreditsTextBox.Text = playerMoney.ToString("C");
             JackPotTextBox.Text = jackpot.ToString("C");
+        }
+
+        private void SpinPictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            SpinPictureBox.Image = Resources.spin_pressed;
         }
     }
 
